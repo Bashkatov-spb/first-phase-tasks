@@ -49,8 +49,17 @@ const data = [
   },
 ];
 
-const getLanguagesStatistic = () => {
-  // Твой код тут
+// o.hasOwnProperty('prop')
+const getLanguagesStatistic = (data) => {
+  const result = {}
+  for(i = 0; i < data.length; i++)  {
+    if(result.hasOwnProperty(`${data[i].language}`))  {
+      result[data[i].language] += 1;
+    } else {
+      result[data[i].language] = 1;
+    }
+  }
+  return result;
 };
 
 const result = getLanguagesStatistic(data);
