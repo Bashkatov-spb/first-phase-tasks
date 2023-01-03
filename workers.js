@@ -14,6 +14,11 @@ class Work {
     this.worker = worker;
     this.salary = salary;
   }
+
+  paySalary(worker) {
+    return (worker.money +=
+      this.salary + Math.ceil((this.salary / 100) * this.worker.stage * 2));
+  }
 }
 
 class Worker {
@@ -24,7 +29,17 @@ class Worker {
     this.money = money;
     this.items = items;
   }
+
+  sayHi() {
+    return this.items.length === 0
+      ? `Привет меня зовут ${this.name}, работаю уже ${this.stage} лет и у меня ${this.money} рублей.`
+      : `Привет меня зовут ${this.name}, работаю уже ${this.stage} лет и у меня ${this.money} рублей и есть: ${this.items}`;
+  }
 }
 
-const kostantin = new Worker('Константин', 23, 5);
-const rabota = new Work(kostantin, 30_000);
+const konstantin = new Worker('Константин', 23, 5);
+const rabota = new Work(konstantin, 30_000);
+
+rabota.paySalary(konstantin);
+
+console.log(konstantin.sayHi());
