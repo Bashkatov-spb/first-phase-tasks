@@ -1,14 +1,37 @@
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
-class Student {
-  // твой код тут
-}
-
 class Institute {
-  // твой код тут
+  constructor(student) {
+    this.student = student;
+  }
+
+  sortByAge() {
+    return this.student.slice().sort((a, b) => a.age - b.age);
+  }
+
+  takeOnlyEngineers(profession) {
+    profession = 'инженер';
+    return this.student.filter((student) => student.profession === profession);
+  }
+
+  averageAge() {
+    return this.student.reduce(
+      (acc, el, ind, arr) =>
+        ind === arr.length - 1
+          ? `Средний возраст всех студентов ${(acc + el.age) / arr.length}`
+          : acc + el.age,
+      0
+    );
+  }
 }
 
-// Код ниже менять нельзя
+class Student {
+  constructor(status, age, profession) {
+    this.status = status;
+    this.age = age;
+    this.profession = profession;
+  }
+}
 
 const elbrus = new Institute([
   new Student('Жмотяра', 43, 'экономист'),
