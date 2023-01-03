@@ -1,0 +1,24 @@
+{
+  "name": "first-phase-tasks",
+  "version": "1.0.0",
+  "main": "gardener.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PenRomain/first-phase-tasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PenRomain/first-phase-tasks/issues"
+  },
+  "homepage": "https://github.com/PenRomain/first-phase-tasks#readme",
+  "devDependencies": {
+    "eslint": "^8.31.0"
+  },
+  "dependencies": {},
+  "keywords": [],
+  "description": ""
+}
