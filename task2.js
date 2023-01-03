@@ -52,16 +52,13 @@ const data = [
 const getLanguagesStatistic = (data) => {
   let filtered = [];
   filtered = data.slice().filter((el) => el.year === 2019);
-  let languages = {};
-  return filtered.map((el) => {
-    let acc = 0;
-    if (
-      filtered.map((el1) =>
-        el1.language === el.language ? (acc += 1) : (acc = 0)
-      )
-    )
-      return (languages = `${el.language}: ${acc}`);
-  });
+  const languages = {};
+  filtered.forEach((el) =>
+    languages[el.language] > 0
+      ? (languages[el.language] += 1)
+      : (languages[el.language] = 1)
+  );
+  return languages;
 };
 
 const result = getLanguagesStatistic(data);
