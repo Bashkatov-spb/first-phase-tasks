@@ -1,13 +1,26 @@
-class Tree {
-  // Твой код ту
-}
-
 class Garden {
-  // Твой код тут
+  constructor(treeType) {
+    this.treeType = treeType;
+  }
+}
+class Tree extends Garden {
+  constructor(treeType) {
+    super(treeType);
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(name) {
+    this.name = name;
+  }
+
+  gatherFruits(myGarden) {
+    const arr = [];
+    myGarden.treeType.forEach((tree) => {
+      arr.push(`${this.name} собрал фрукты с дерева '${tree.treeType}'`);
+    });
+    return arr;
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.
