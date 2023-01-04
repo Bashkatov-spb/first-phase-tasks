@@ -1,5 +1,8 @@
 // Languages Statistic
-// Реализуйте функцию getLanguagesStatistic, которая поможет IT журналу подвести итоги 2019 года по популярности использования языков программирования. На входе функция получает массив отзывов пользователей. Необходимо вернуть объект в формате { languageName: count, anotherLanguageName: anotherCount, ... }, где languageName - название языка в строке, а count - число отзывов, которые оставили программисты, использующие этот язык. При этом следует учитывать только те отзывы пользователей, которые были оставлены в 2019 году. Год отзыва хранится в поле year, язык - в поле language.
+// Реализуйте функцию getLanguagesStatistic, которая поможет IT журналу подвести итоги 2019 года по популярности использования языков программирования. 
+//На входе функция получает массив отзывов пользователей. Необходимо вернуть объект в формате { languageName: count, anotherLanguageName: anotherCount, ... }, 
+//где languageName - название языка в строке, а count - число отзывов, которые оставили программисты, использующие этот язык. 
+//При этом следует учитывать только те отзывы пользователей, которые были оставлены в 2019 году. Год отзыва хранится в поле year, язык - в поле language.
 
 const data = [
   {
@@ -49,8 +52,13 @@ const data = [
   },
 ];
 
-const getLanguagesStatistic = () => {
-  // Твой код тут
+const getLanguagesStatistic = (data) => {
+  const result = {};
+  data.filter((c)=>c.year>=2019).forEach((el)=> {
+  if (result[el.language] > 0) {
+    result[el.language]++
+  } else result[el.language] = 1})
+  return result
 };
 
 const result = getLanguagesStatistic(data);
