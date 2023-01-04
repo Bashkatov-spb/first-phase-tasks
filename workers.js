@@ -48,6 +48,21 @@ class Worker {
     this.haveDinner(30);
     this.money += Work.salary * Work.koef;
   }
+  oneYearLater() {
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.oneMounthLater();
+    this.age += 1;
+    this.stage += 1;
+  }
+}
 
 const shop = [
   {
@@ -82,4 +97,3 @@ const shop = [
 
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
-
