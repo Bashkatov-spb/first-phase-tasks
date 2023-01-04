@@ -49,6 +49,37 @@ class Worker {
     this.money += Work.salary * Work.koef;
   }
 
+const shop = [
+  {
+    name: "swatch",
+    price: 100,
+  },
+  {
+    name: "bag",
+    price: 1000,
+  },
+  {
+    name: "iPhone",
+    price: 1500,
+  },
+  {
+    name: "macBook",
+    price: 2000,
+  },
+  {
+    name: "Tesla",
+    price: 40_000,
+  },
+  {
+    name: "House",
+    price: 300_000,
+  },
+  {
+    name: "Own Company",
+    price: 3_000_000,
+  },
+];
+
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
 
