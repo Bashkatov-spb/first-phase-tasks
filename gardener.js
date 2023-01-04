@@ -1,12 +1,28 @@
-class Tree {
+class Tree{
+  constructor(name){
+    this.name = name;
+  }
   // Твой код ту
 }
 
-class Garden {
+class Garden{
+  constructor(trees = []){
+    this.trees = trees
+  }
   // Твой код тут
 }
 
-class Gardener {
+class Gardener { 
+  constructor(name) {
+    this.name = name
+  }
+  gatherFruits(obj) {
+    const result = []
+    for (let tree in obj.trees) {
+      result.push(`${this.name} собрал фрукты с дерева "${obj.trees[tree].name}"`)
+    }
+    return result
+  }
   // Твой код тут
 }
 
