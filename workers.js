@@ -44,7 +44,10 @@ class Worker {
       Work.koef = 1.5;
     }
   }
-
+  oneMounthLater() {
+    this.haveDinner(30);
+    this.money += Work.salary * Work.koef;
+  }
 
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
