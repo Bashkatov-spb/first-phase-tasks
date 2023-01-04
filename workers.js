@@ -10,9 +10,10 @@
   4. Смерть работника от старости, либо шанс 0.1% 
 */
 class Work {
-  constructor(worker, salary) {
+  constructor(worker, salary, koef = 1) {
     this.worker = worker;
     this.salary = salary;
+    this.koef = koef;
   }
 }
 
@@ -24,7 +25,13 @@ class Worker {
     this.money = money;
     this.items = items;
   }
-}
+  sayHi() {
+    console.log(
+      `Hello, i'm ${this.name}, i'm ${this.age}y.o. i have ${this.money} dollars and this items ${this.items}`
+    );
+  }
 
-const kostantin = new Worker('Константин', 23, 5);
+
+const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
+
