@@ -1,13 +1,19 @@
 class Tree {
-  // Твой код ту
+  constructor(name){
+    this.name = name
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(treeArr = []){
+this.treeArr = treeArr
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(nameRabotyga){
+    this.nameRabotyga = nameRabotyga
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.
