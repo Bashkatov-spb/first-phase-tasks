@@ -30,7 +30,10 @@ class Worker {
       `Hello, i'm ${this.name}, i'm ${this.age}y.o. i have ${this.money} dollars and this items ${this.items}`
     );
   }
-
+  haveDinner(num) {
+    this.money -= Math.random() * 10 * num;
+  }
+  
 
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
