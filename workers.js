@@ -33,7 +33,18 @@ class Worker {
   haveDinner(num) {
     this.money -= Math.random() * 10 * num;
   }
-  
+  koefChanger() {
+    if (this.stage >= 15) {
+      Work.koef = 3;
+    }
+    if (this.stage >= 10) {
+      Work.koef = 2;
+    }
+    if (this.stage >= 5) {
+      Work.koef = 1.5;
+    }
+  }
+
 
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
