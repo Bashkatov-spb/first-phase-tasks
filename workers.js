@@ -18,12 +18,13 @@ class Work {
 }
 
 class Worker {
-  constructor(name, age, stage, money = 0, items = []) {
+  constructor(name, age, stage, money = 0, items = [],timeToDie = Math.random() * (110 - 25)+25) {
     this.name = name;
     this.age = age;
     this.stage = stage;
     this.money = money;
     this.items = items;
+    this.timeToDie = timeToDie;
   }
   const shop = [
     {
