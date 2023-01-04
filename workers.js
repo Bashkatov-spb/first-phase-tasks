@@ -92,6 +92,7 @@ class Worker {
     this.age += 1;
     this.stage += 1;
     this.koefChanger()
+    this.shoppping()
   }
 }
 
