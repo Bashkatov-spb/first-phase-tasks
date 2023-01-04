@@ -25,6 +25,36 @@ class Worker {
     this.money = money;
     this.items = items;
   }
+  const shop = [
+    {
+      name: "swatch",
+      price: 100,
+    },
+    {
+      name: "bag",
+      price: 1000,
+    },
+    {
+      name: "iPhone",
+      price: 1500,
+    },
+    {
+      name: "macBook",
+      price: 2000,
+    },
+    {
+      name: "Tesla",
+      price: 40_000,
+    },
+    {
+      name: "House",
+      price: 300_000,
+    },
+    {
+      name: "Own Company",
+      price: 3_000_000,
+    },
+  ];
   sayHi() {
     console.log(
       `Hello, i'm ${this.name}, i'm ${this.age}y.o. i have ${this.money} dollars and this items ${this.items}`
@@ -44,56 +74,28 @@ class Worker {
       Work.koef = 1.5;
     }
   }
-  oneMounthLater() {
+  shoppping(arr){
+    arr.map((el,i)=>{
+      if (el.price <= this.money){
+        this.money -= el.price;
+        this.items.push(el.name)
+        arr.splice(i,1)
+      }
+    })
+  }
+  oneMounthLater(num) {
     this.haveDinner(30);
-    this.money += Work.salary * Work.koef;
+    this.money += Work.salary * Work.koef*num;
   }
   oneYearLater() {
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
-    this.oneMounthLater();
+    this.oneMounthLater(12);
     this.age += 1;
     this.stage += 1;
+    this.koefChanger()
   }
 }
 
-const shop = [
-  {
-    name: "swatch",
-    price: 100,
-  },
-  {
-    name: "bag",
-    price: 1000,
-  },
-  {
-    name: "iPhone",
-    price: 1500,
-  },
-  {
-    name: "macBook",
-    price: 2000,
-  },
-  {
-    name: "Tesla",
-    price: 40_000,
-  },
-  {
-    name: "House",
-    price: 300_000,
-  },
-  {
-    name: "Own Company",
-    price: 3_000_000,
-  },
-];
+
 
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
