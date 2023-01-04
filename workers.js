@@ -18,13 +18,14 @@ class Work {
 }
 
 class Worker {
-  constructor(name, age, stage, money = 0, items = [],timeToDie = Math.random() * (110 - 25)+25) {
+  constructor(name, age, stage, money = 0, items = [],timeToDie = Math.random() * (110 - 25)+25, died = false) {
     this.name = name;
     this.age = age;
     this.stage = stage;
     this.money = money;
     this.items = items;
     this.timeToDie = timeToDie;
+    this.died = died;
   }
   const shop = [
     {
@@ -94,6 +95,7 @@ class Worker {
     this.stage += 1;
     this.koefChanger()
     this.shoppping()
+    
   }
 }
 
