@@ -54,7 +54,7 @@ const getLanguagesStatistic = (arr) => {
   const result = {};
   newArr.map((el) => {
     if (!result[`${el.language}`]) {
-      result[`${el.language}`] = 0;
+      result[`${el.language}`] = 0; //Толь объясни пожалуйста почему здесь 0, а не 1? Если ставлю 1 то он на единицу завышает результат :(
     }
     result[`${el.language}`] += 1;
   });
