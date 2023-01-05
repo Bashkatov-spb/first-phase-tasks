@@ -103,7 +103,7 @@ class Worker {
   }
   oneMounthLater(num) {
     this.haveDinner(30);
-    this.money += Work.salary * Work.koef * num;
+    this.money += rabota.salary * rabota.koef * num;
   }
   oneYearLater() {
     this.deposite();
@@ -125,6 +125,6 @@ class Worker {
 
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
-// kostantin.oneYearLater();
+kostantin.oneYearLater();
 
-console.log(kostantin.oneMounthLater(1), kostantin.money);
+// console.log(kostantin.oneMounthLater(1), kostantin.money);
