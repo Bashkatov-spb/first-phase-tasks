@@ -1,14 +1,32 @@
 class Tree {
-  // Твой код ту
+  constructor(treeName) {
+    this.treeName = treeName;
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(tree) {
+    this.tree = tree;
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(name) {
+    this.name = name;
+  }
+
+  gatherFruits(a) {
+    let arr = [];
+    a.tree.forEach((el) => {
+
+      arr.push(`${this.name} собрал фрукты с дерева "${el.treeName}"`);
+
+    });
+    return arr;
+  }
 }
+
+
 
 // Измени код выше, чтобы код ниже заработал.
 // Код ниже не менять :)

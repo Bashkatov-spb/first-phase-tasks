@@ -50,7 +50,32 @@ const data = [
 ];
 
 const getLanguagesStatistic = () => {
-  // Твой код тут
+  let obj = {};
+
+  const filt = data.filter((el) => el.year === 2019);
+
+  // filt.forEach(el => obj[el.language] = (obj[el.language] || 0) + 1);  //этот вариант делал не сам
+
+  let C = 0
+  let JS = 0
+  // let Ruby = 0
+
+  for (let i in filt) {
+    if (filt[i].language === "C") {
+      C += 1
+    }
+    if (filt[i].language === "JavaScript") {
+      JS += 1
+    }
+    // if (filt[i].language === "Ruby") {
+    //   Ruby += 1
+    // }
+    obj.C = C;
+    obj.JavaScript = JS;
+    // obj.Ruby = Ruby;
+  }
+
+  return obj;
 };
 
 const result = getLanguagesStatistic(data);

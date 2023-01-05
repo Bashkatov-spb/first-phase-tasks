@@ -2,10 +2,40 @@
 
 class Student {
   // твой код тут
+  constructor(name, age, profession) {
+    this.name = name;
+    this.age = age;
+    this.profession = profession;
+  }
+
 }
+
+
 
 class Institute {
   // твой код тут
+
+  constructor(student) {
+    this.student = student;
+  }
+
+  sortByAge() {
+    const newElb = this.student.slice();
+    return newElb.sort((a, b) => b.age - a.age);
+  }
+
+  takeOnlyEngineers() {
+    return this.student.filter((el) => el.profession === "инженер");
+  }
+
+  averageAge() {
+    // let averAge = 0;
+    // this.student.map((el) => averAge += el.age)
+    // return averAge / this.student.length;
+
+    return this.student.reduce((acc, el) => el.age + acc, 0) / this.student.length;
+  }
+
 }
 
 // Код ниже менять нельзя
