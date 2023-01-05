@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable max-len */
 // Languages Statistic
 // Реализуйте функцию getLanguagesStatistic, которая поможет IT журналу подвести итоги 2019 года по популярности использования языков программирования. На входе функция получает массив отзывов пользователей. Необходимо вернуть объект в формате { languageName: count, anotherLanguageName: anotherCount, ... }, где languageName - название языка в строке, а count - число отзывов, которые оставили программисты, использующие этот язык. При этом следует учитывать только те отзывы пользователей, которые были оставлены в 2019 году. Год отзыва хранится в поле year, язык - в поле language.
 
@@ -49,8 +51,15 @@ const data = [
   },
 ];
 
-const getLanguagesStatistic = () => {
-  // Твой код тут
+const getLanguagesStatistic = (arr) => {
+  const yearComment = arr
+    .filter((el) => el.year === 2019)
+    .map((el) => el.language);
+  const res = {};
+  yearComment.forEach((el) => {
+    res[el] = res[el] + 1 || 1;
+  });
+  return res;
 };
 
 const result = getLanguagesStatistic(data);

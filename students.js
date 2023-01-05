@@ -1,11 +1,32 @@
+/* eslint-disable no-console */
+/* eslint-disable max-len */
+/* eslint-disable max-classes-per-file */
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
 class Student {
-  // твой код тут
+  constructor(nickName, age, profession) {
+    this.nickName = nickName;
+    this.age = age;
+    this.profession = profession;
+  }
 }
 
 class Institute {
-  // твой код тут
+  constructor(arr) {
+    this.arr = arr;
+  }
+
+  sortByAge() {
+    return [...this.arr].sort((a, b) => a.age - b.age);
+  }
+
+  takeOnlyEngineers() {
+    return this.arr.filter((el) => el.profession === 'инженер');
+  }
+
+  averageAge() {
+    return this.arr.reduce((acc, el) => acc + el.age / this.arr.length, 0);
+  }
 }
 
 // Код ниже менять нельзя

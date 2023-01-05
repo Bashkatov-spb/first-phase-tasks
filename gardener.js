@@ -1,23 +1,42 @@
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable no-console */
+/* eslint-disable max-classes-per-file */
+
 class Tree {
-  // Твой код ту
+  constructor(tree) {
+    this.tree = tree;
+  }
 }
 
-class Garden {
-  // Твой код тут
+class Garden extends Tree {
+  constructor(tree) {
+    super(tree);
+  }
 }
-
 class Gardener {
-  // Твой код тут
+  constructor(name) {
+    this.name = name;
+  }
+
+  gatherFruits(obj) {
+    const res = [];
+    for (const key in obj.tree) {
+      res.push(`${this.name} собрал фрукты с дерева “${obj.tree[key].tree}“`);
+    }
+    return res;
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.
 // Код ниже не менять :)
 const myLittleGarden = new Garden([
-  new Tree(`яблоня высокая`), // экземпляр класса
-  new Tree(`груша`),
-  new Tree(`персиковое дерево`),
+  new Tree('яблоня высокая'), // экземпляр класса
+  new Tree('груша'),
+  new Tree('персиковое дерево'),
 ]);
-const gennadiy = new Gardener(`Геннадий`);
+const gennadiy = new Gardener('Геннадий');
 const results = gennadiy.gatherFruits(myLittleGarden);
 console.log(results);
 
