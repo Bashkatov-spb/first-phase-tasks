@@ -16,9 +16,46 @@ class Work {
     this.koef = koef;
   }
 }
-
+const shop = [
+  {
+    name: "Часы",
+    price: 10_000,
+  },
+  {
+    name: "четкий прикид",
+    price: 100_000,
+  },
+  {
+    name: "Понтовый телефон",
+    price: 150_000,
+  },
+  {
+    name: "Мощный комп",
+    price: 200_000,
+  },
+  {
+    name: "Крутой джипяра",
+    price: 8_000_000,
+  },
+  {
+    name: "Хата мечты",
+    price: 30_000_000,
+  },
+  {
+    name: "Контора в которой я босс",
+    price: 300_000_000,
+  },
+];
 class Worker {
-  constructor(name, age, stage, money = 0, items = [],timeToDie = Math.random() * (110 - 25)+25, died = false) {
+  constructor(
+    name,
+    age,
+    stage,
+    money = 30_000,
+    items = [],
+    timeToDie = Math.ceil(Math.random() * (110 - 25) + 25),
+    died = false
+  ) {
     this.name = name;
     this.age = age;
     this.stage = stage;
@@ -27,43 +64,13 @@ class Worker {
     this.timeToDie = timeToDie;
     this.died = died;
   }
-  const shop = [
-    {
-      name: "swatch",
-      price: 100,
-    },
-    {
-      name: "bag",
-      price: 1000,
-    },
-    {
-      name: "iPhone",
-      price: 1500,
-    },
-    {
-      name: "macBook",
-      price: 2000,
-    },
-    {
-      name: "Tesla",
-      price: 40_000,
-    },
-    {
-      name: "House",
-      price: 300_000,
-    },
-    {
-      name: "Own Company",
-      price: 3_000_000,
-    },
-  ];
   sayHi() {
     console.log(
-      `Hello, i'm ${this.name}, i'm ${this.age}y.o. i have ${this.money} dollars and this items ${this.items}`
+      `Привет я ${this.name}, мне ${this.age}лет, у меня есть ${this.money} рублей и следущее имущество ${this.items}`
     );
   }
   haveDinner(num) {
-    this.money -= Math.random() * 10 * num;
+    this.money -= Math.random() * 600 * num;
   }
   koefChanger() {
     if (this.stage >= 15) {
@@ -76,30 +83,48 @@ class Worker {
       Work.koef = 1.5;
     }
   }
-  shoppping(arr){
-    arr.map((el,i)=>{
-      if (el.price <= this.money){
+  deposite() {
+    this.money = this.money * 1.1;
+  }
+  shoppping(arr) {
+    arr.map((el, i) => {
+      if (el.price <= this.money) {
         this.money -= el.price;
-        this.items.push(el.name)
-        arr.splice(i,1)
+        this.items.push(el.name);
+        arr.splice(i, 1);
       }
-    })
+    });
+  }
+  isDied() {
+    const unlucky = Math.random() * (1000 - 1) + 1;
+    if (this.age === this.timeToDie || unlucky === 500) {
+      this.died = true;
+    }
   }
   oneMounthLater(num) {
     this.haveDinner(30);
-    this.money += Work.salary * Work.koef*num;
+    this.money += Work.salary * Work.koef * num;
   }
   oneYearLater() {
+    this.deposite();
     this.oneMounthLater(12);
     this.age += 1;
     this.stage += 1;
-    this.koefChanger()
-    this.shoppping()
-    
+    this.koefChanger();
+    this.shoppping(shop);
+    this.isDied();
+    if (this.died) {
+      return console.log(
+        `${this.name} умер на ${this.age}ем году жизни, он скопил ${this.money} рублей и нажил ${this.items} :( `
+      );
+    }
+    this.sayHi();
+    return this.oneYearLater();
   }
 }
 
-
-
 const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
+// kostantin.oneYearLater();
+
+console.log(kostantin.oneMounthLater(1), kostantin.money);
