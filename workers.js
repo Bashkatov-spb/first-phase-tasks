@@ -23,8 +23,81 @@ class Worker {
     this.stage = stage;
     this.money = money;
     this.items = items;
+    this.countDiners = 0;
+    this.random = Math.floor(Math.random() * 10) + 82;
+    this.die = false;
+  }
+
+  sayHi() {
+    if (this.age < this.random) {
+      console.log(
+        `Hello, my name is ${this.name}, i am ${this.age} years old, my stage is ${this.stage} i have ${this.money} money and ${this.items}`
+        );
+    } else {
+      console.log(`${this.name} ...`)
+    }
+  }
+  eatFood () {
+    this.countDiners ++;
+    this.money = this.money - 100;
+  }
+
+  working(parametr) {
+    if (this.age < this.random) {
+      for (let i = 0; i < 3; i++) {
+        this.eatFood();
+      }
+      this.age += 1;
+      this.stage += 0.5;
+      this.money += parametr.salary * this.stage;
+    } else {
+      this.die = true;
+    }
+  }
+  
+  wonderful(dreams) {
+    if (this.age < this.random) {
+      dreams.forEach((item) => {
+        if (this.money >= item.price) {
+          console.log(`Ура! ${this.name} купил ${item.name}`);
+          dreams.shift();
+          this.items.push(item.name);
+          this.money -= item.price;
+        }
+      })
+    }
   }
 }
 
-const kostantin = new Worker('Константин', 23, 5);
+const dreams = [
+  {
+    name: 'Iphone',
+    price: 120_000,
+  },
+  {
+    name: 'MacBook',
+    price: 170_000,
+  },
+  {
+    name: 'Mersedec',
+    price: 1_800_000,
+  },
+  {
+    name: 'Penthouse',
+    price: 3_200_000,
+  },
+]
+
+const kostantin = new Worker('Константин', 23, 5, 0, []);
 const rabota = new Work(kostantin, 30_000);
+
+for (let i = 0; i < 135; i++) {
+  if(!kostantin.die) {
+      kostantin.sayHi(); 
+      kostantin.working(rabota);
+      kostantin.eatFood();
+      kostantin.wonderful(dreams);
+    } else {
+      kostantin.sayHi();
+    }
+  }
