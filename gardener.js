@@ -1,14 +1,27 @@
 class Tree {
-  // Твой код ту
+  constructor(name) {
+    this.name = name
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(take = []) {
+    this.take = take
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(nameG) {
+    this.nameG = nameG
+  }
+
+ gatherFruits(myLittleGarden) {
+ let quest = myLittleGarden.take.map((tree) => `${this.nameG} собрал фрукты с дерева ${tree.name}`)
+ return quest
 }
+}
+
+
 
 // Измени код выше, чтобы код ниже заработал.
 // Код ниже не менять :)
