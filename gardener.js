@@ -15,11 +15,9 @@ class Gardener {
   }
 
   gatherFruits(myGarden) {
-    const arr = [];
-    myGarden.treeType.forEach((tree) => {
-      arr.push(`${this.name} собрал фрукты с дерева '${tree.treeType}'`);
-    });
-    return arr;
+    return myGarden.treeType.map(
+      (tree) => `${this.name} собрал фрукты с дерева '${tree.treeType}'`
+    );
   }
 }
 
