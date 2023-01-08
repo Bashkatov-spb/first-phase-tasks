@@ -1,21 +1,39 @@
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
 class Student {
-  // твой код тут
+  constructor(nick, age, job) {
+    this.nick = nick;
+    this.age = age;
+    this.job = job;
+  }
 }
 
 class Institute {
-  // твой код тут
+  constructor(arr) {
+    this.arr = arr;
+  }
+
+  sortByAge() {
+    return this.arr.sort((a, b) => a.age - b.age);
+  }
+
+  takeOnlyEngineers() {
+    return this.arr.filter((i) => i.job === "инженер");
+  }
+
+  averageAge() {
+    return this.arr.reduce((sum, i) => sum + i.age, 0) / this.arr.length;
+  }
 }
 
 // Код ниже менять нельзя
 
 const elbrus = new Institute([
-  new Student('Жмотяра', 43, 'экономист'),
-  new Student('Петушара', 25, 'инженер'),
-  new Student('Козлина', 31, 'инженер'),
-  new Student('Сопляк', 11, 'какулегенератор'),
-  new Student('Алкаш', 33, 'инженер'),
+  new Student("Жмотяра", 43, "экономист"),
+  new Student("Петушара", 25, "инженер"),
+  new Student("Козлина", 31, "инженер"),
+  new Student("Сопляк", 11, "какулегенератор"),
+  new Student("Алкаш", 33, "инженер"),
 ]);
 
 const sortedByAge = elbrus.sortByAge(); // Исходный массив менять нельзя

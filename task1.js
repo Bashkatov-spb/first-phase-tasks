@@ -1,50 +1,52 @@
 const data = [
   {
-    firstName: 'Gabriel',
-    lastName: 'X.',
-    country: 'Monaco',
-    continent: 'Europe',
+    firstName: "Gabriel",
+    lastName: "X.",
+    country: "Monaco",
+    continent: "Europe",
     age: 49,
-    language: 'PHP',
+    language: "PHP",
   },
   {
-    firstName: 'Odval',
-    lastName: 'F.',
-    country: 'Mongolia',
-    continent: 'Asia',
+    firstName: "Odval",
+    lastName: "F.",
+    country: "Mongolia",
+    continent: "Asia",
     age: 38,
-    language: 'Python',
+    language: "Python",
   },
   {
-    firstName: 'Emilija',
-    lastName: 'S.',
-    country: 'Lithuania',
-    continent: 'Europe',
+    firstName: "Emilija",
+    lastName: "S.",
+    country: "Lithuania",
+    continent: "Europe",
     age: 19,
-    language: 'Python',
+    language: "Python",
   },
   {
-    firstName: 'Sou',
-    lastName: 'B.',
-    country: 'Japan',
-    continent: 'Asia',
+    firstName: "Sou",
+    lastName: "B.",
+    country: "Japan",
+    continent: "Asia",
     age: 49,
-    language: 'PHP',
+    language: "PHP",
   },
   {
-    firstName: 'John',
-    lastName: 'L.',
-    country: 'Tokio',
-    continent: 'Asia',
+    firstName: "John",
+    lastName: "L.",
+    country: "Tokio",
+    continent: "Asia",
     age: 49,
-    language: 'Java',
+    language: "Java",
   },
 ];
 
 // Необходимо вернуть массив, содержащий самого старшего человека в списке. Если несколько людей имеют одинаковый наибольший возраст, то нужно вернуть массив, содержащий их всех.
 
-const getMostSenior = () => {
-  // твой код тут
+const getMostSenior = (data) => {
+  let sortedArr = data.sort((a, b) => a.age - b.age);
+  let old = sortedArr[sortedArr.length - 1].age;
+  return sortedArr.filter((i) => i.age === old);
 };
 
 const result = getMostSenior(data);
