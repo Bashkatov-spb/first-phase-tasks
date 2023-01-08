@@ -14,6 +14,13 @@ class Gardener {
   constructor(nameRabotyga){
     this.nameRabotyga = nameRabotyga
   }
+  gatherFruits(myLittleGarden){
+    let arr = []
+    myLittleGarden.treeArr.map((el)=>{
+      arr.push(`${gennadiy.nameRabotyga} собрал фрукты с дерева "${el.name}"`)
+    })
+    return arr
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.
