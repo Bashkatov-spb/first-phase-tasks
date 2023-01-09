@@ -15,9 +15,9 @@ class Gardener {
     this.name = name;
   }
 
-  gatherFruits(trees) {
+  gatherFruits(myLittleGarden) {
     // console.log(trees);
-    return trees.arr.map(
+    return myLittleGarden.arr.map(
       (i) => `${this.name} собрал фрукты с дерева ${i.tree}`
     );
   }
