@@ -53,4 +53,5 @@ console.log(result);
 // [
 //     { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
 //     { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
+//     { firstName: 'John', lastName: 'L.', country: 'Tokio', continent: 'Asia', age: 49, language: 'Java' },
 // ]
