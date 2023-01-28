@@ -14,6 +14,12 @@ class Work {
     this.worker = worker;
     this.salary = salary;
   }
+  salaryForMonth() {
+    for (let i = 0; i <= this.worker.stage; i += 5) {
+      this.worker.money += i * 1000;
+    }
+    this.worker.money += this.salary;
+  }
 }
 
 class Worker {
@@ -24,7 +30,47 @@ class Worker {
     this.money = money;
     this.items = items;
   }
+  sayHi() {
+    return `Добрый день! Меня зовут ${this.name}. Мне ${
+      this.age
+    } года. Мой стаж работы ${this.stage} лет. Наличие денег ${
+      this.money
+    } рублей. Владею имуществом ${this.items.reduce(
+      (a, b) => a + " " + b.title,
+      ""
+    )}`;
+  }
+  meal(n) {
+    for (let i = 0; i < n; i += 1) this.money -= 150;
+  }
+  again() {
+    this.age += 1;
+    this.stage += 1;
+  }
+  buy(item) {
+    if (this.money >= item.price) {
+      this.money -= item.price;
+      this.items.push(item);
+    }
+  }
+  diad() {
+    this.age < 100;
+  }
+}
+class Item {
+  constructor(title, price) {
+    this.title = title;
+    this.price = price;
+  }
 }
 
-const kostantin = new Worker('Константин', 23, 5);
+const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
+const tv = new Item("Телевизор", 10000);
+const table = new Item("Стол", 10000);
+rabota.salaryForMonth();
+kostantin.meal(3);
+kostantin.buy(tv);
+kostantin.buy(table);
+kostantin.again();
+console.log(kostantin.sayHi());
