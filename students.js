@@ -2,10 +2,30 @@
 
 class Student {
   // твой код тут
+  constructor(name, age, specialty) {
+    this.name = name;
+    this.age = age;
+    this.specialty = specialty;
+  }
 }
 
 class Institute {
   // твой код тут
+  constructor(students) {
+    this.students = students;
+  }
+
+  sortByAge() {
+    return this.students.slice().sort((a, b) => a.age - b.age);
+  }
+  takeOnlyEngineers() {
+    return this.students.filter((el) => el.specialty === 'инженер');
+  }
+  averageAge() {
+    return (
+      this.students.reduce((sum, el) => sum + el.age, 0) / this.students.length
+    );
+  }
 }
 
 // Код ниже менять нельзя

@@ -14,6 +14,9 @@ class Work {
     this.worker = worker;
     this.salary = salary;
   }
+  paySalary() {
+    this.worker.money += this.salary + this.salary * (this.worker.stage / 100);
+  }
 }
 
 class Worker {
@@ -23,8 +26,78 @@ class Worker {
     this.stage = stage;
     this.money = money;
     this.items = items;
+    this.workingDays = 0;
+    this.stomach = 0;
+  }
+
+  eat() {
+    console.log(`${this.name} поел!`);
+    this.stomach += 1;
+    this.money -= 150;
+  }
+
+  getHungry() {
+    console.log(`${this.name} проголодался!`);
+    this.stomach -= 1;
+  }
+
+  buy(item, price) {
+    if (this.money >= price) {
+      this.money -= price;
+      this.items.push({ item });
+    }
+  }
+
+  sayHi() {
+    if (this.items.length) {
+      console.log(
+        `Hello! My name is ${this.name}, age: ${this.age}, I have ${
+          this.money
+        } money and ${this.items.map((el) => el.item)}!`
+      );
+    } else {
+      console.log(
+        `Hello! My name is ${this.name}, age: ${this.age}, I have ${this.money} money and nothing more`
+      );
+    }
+  }
+
+  goToWork(someWork) {
+    console.log(`${this.name} сходил на работу!`);
+    this.workingDays += 1;
+    this.eat();
+    this.getHungry();
+    this.eat();
+    this.getHungry();
+    this.eat();
+    this.getHungry();
+    if (this.workingDays % 20 === 0) {
+      someWork.paySalary();
+    }
+    if (this.workingDays % 240 === 0) {
+      this.stage += 1;
+      getOlder();
+    }
+  }
+
+  getOlder() {
+    this.age += 1;
+    if (this.age === 90) {
+      this.died();
+    }
+  }
+
+  died() {
+    console.log(`${this.name} умер!`);
   }
 }
 
-const kostantin = new Worker('Константин', 23, 5);
+const kostantin = new Worker('Константин', 88, 5, 1000);
 const rabota = new Work(kostantin, 30_000);
+
+kostantin.buy('table', 100);
+kostantin.getOlder();
+kostantin.goToWork(rabota);
+kostantin.sayHi();
+
+console.log(kostantin);
