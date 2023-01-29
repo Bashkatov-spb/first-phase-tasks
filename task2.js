@@ -1,5 +1,11 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable max-len */
 // Languages Statistic
-// Реализуйте функцию getLanguagesStatistic, которая поможет IT журналу подвести итоги 2019 года по популярности использования языков программирования. На входе функция получает массив отзывов пользователей. Необходимо вернуть объект в формате { languageName: count, anotherLanguageName: anotherCount, ... }, где languageName - название языка в строке, а count - число отзывов, которые оставили программисты, использующие этот язык. При этом следует учитывать только те отзывы пользователей, которые были оставлены в 2019 году. Год отзыва хранится в поле year, язык - в поле language.
+// Реализуйте функцию getLanguagesStatistic, которая поможет IT журналу подвести итоги 2019 года по популярности использования языков программирования.
+// На входе функция получает массив отзывов пользователей. Необходимо вернуть объект в формате { languageName: count, anotherLanguageName: anotherCount, ... },
+// где languageName - название языка в строке, а count - число отзывов, которые оставили программисты, использующие этот язык.
+// При этом следует учитывать только те отзывы пользователей, которые были оставлены в 2019 году. Год отзыва хранится в поле year, язык - в поле language.
 
 const data = [
   {
@@ -50,9 +56,46 @@ const data = [
 ];
 
 const getLanguagesStatistic = () => {
-  // Твой код тут
+  let obj = {};
+  let langArr = [];
+  let set = new Set();
+  let counter = 0;
+  let count = 0;
+  data.map((el) => {
+    if (el.year === 2019) {
+      langArr.push(el.language);
+    }
+  });
+  let sortArr = langArr.sort();
+  for (let i = 0; i < langArr.length; i++) {
+    set.add(langArr[i]);
+  }
+  let arr = [...set];
+  function countr(iter) {
+    sortArr.map((el) => {
+      if (el === arr[iter] && counter <= langArr.length) {
+        count += 1;
+        let key = el;
+        obj[key] = count;
+        counter += 1;
+        countr[iter];
+      } else if (el !== arr[iter] && counter <= langArr.length) {
+        count = 0;
+        count += 1;
+        counter += 1;
+        let key = el;
+        obj[key] = count;
+        iter += 1;
+        countr[iter];
+      } else {
+        return obj;
+      }
+    });
+    return obj;
+  }
+  countr(0);
+  return obj;
 };
-
 const result = getLanguagesStatistic(data);
 
 console.log(result);
