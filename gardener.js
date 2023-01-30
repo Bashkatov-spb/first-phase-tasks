@@ -1,13 +1,25 @@
 class Tree {
-  // Твой код ту
+  constructor(name_tree) {
+    this.name_tree = name_tree;
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(store = []) {
+    this.store = store;
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(name) {
+    this.name = name;
+  }
+  gatherFruits(sobaka) {
+    const result = sobaka.store.map(
+      (el) => (el = `${this.name} собрал фрукты с дерева "${el.name_tree}"`)
+    );
+    return result;
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.

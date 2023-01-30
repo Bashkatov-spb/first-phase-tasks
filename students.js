@@ -1,12 +1,29 @@
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
+const { age } = require("random-profile-generator");
+
 class Student {
-  // твой код тут
+  constructor(name, age, prof) {
+    this.name = name;
+    this.age = age;
+    this.prof = prof;
+  }
 }
 
 class Institute {
-  // твой код тут
-}
+  constructor(all = []) {
+    this.all = all;
+  }
+  sortByAge() {
+    return this.all.sort((a, b) => a.age - b.age);
+  }
+  takeOnlyEngineers() {
+    return this.all.filter((el) => el.prof === "инженер");
+  }
+  averageAge() {
+    return this.all.reduce((accum, el) => accum + el.age, 0)/this.all.length;
+    }
+  }
 
 // Код ниже менять нельзя
 
