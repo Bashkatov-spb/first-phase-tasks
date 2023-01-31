@@ -49,7 +49,14 @@ const data = [
   },
 ];
 
-const getLanguagesStatistic = () => {
+const getLanguagesStatistic = (arr) => {
+  let reviews2019 = arr.filter(el => el.year === 2019);
+  let langPopularity = {};
+  for (let review of reviews2019) {
+    const a = langPopularity[`${review.language}`];
+    langPopularity[`${review.language}`] = a ? a + 1 : 1;
+  };
+  return langPopularity;
   // Твой код тут
 };
 
