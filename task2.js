@@ -49,8 +49,21 @@ const data = [
   },
 ];
 
-const getLanguagesStatistic = () => {
-  // Твой код тут
+const getLanguagesStatistic = (data) => {
+  const filteredData = data
+    .filter((el) => el.year === 2019)
+    .map((el) => el.language);
+  //[ 'C', 'JavaScript', 'JavaScript' ]
+  const obj = {};
+  // console.log(filteredData);
+
+  // very difficult:
+  for (let i = 0; i < filteredData.length; i++) {
+    obj[filteredData[i]] = filteredData.filter(
+      (el) => el === filteredData[i]
+    ).length;
+  }
+  return obj;
 };
 
 const result = getLanguagesStatistic(data);

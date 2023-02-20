@@ -24,7 +24,24 @@ class Worker {
     this.money = money;
     this.items = items;
   }
+  sayHi() {
+    console.log(
+      `Hi, my name is ${this.name}. My stage is ${this.stage}. Ive got some money -like ${this.money} tenge.\n Im the owner of ${this.items}`
+    );
+  }
+}
+class Property {
+  constructor(type, price) {
+    this.type = type;
+    this.price = price;
+  }
 }
 
+const properties = [
+  new Property(housewife, 100_000),
+  new Property(car, 60_000),
+  new Property(house, 100_000),
+];
 const kostantin = new Worker('Константин', 23, 5);
 const rabota = new Work(kostantin, 30_000);
+konstantin.sayHi()

@@ -1,11 +1,29 @@
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
 class Student {
-  // твой код тут
+  constructor(name, age, prof) {
+    this.name = name;
+    this.age = age;
+    this.prof = prof;
+  }
 }
 
 class Institute {
-  // твой код тут
+  constructor(students) {
+    // нужен ли здесь пустой массив в конструкторе?
+    this.students = students;
+  }
+
+  sortByAge() {
+    return [...this.students].sort((a, b) => a.age - b.age); // спредим чтобы не менять массив
+  }
+  takeOnlyEngineers() {
+    return this.students.filter((el) => el.prof === 'инженер');
+  }
+  averageAge() {
+    const studentsFull = this.students.reduce((acc, el) => acc + el.age, 0);
+    return studentsFull / this.students.length;
+  }
 }
 
 // Код ниже менять нельзя
