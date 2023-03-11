@@ -14,15 +14,14 @@ class Institute {
   }
 
   sortByAge() {
-    let res = [...this.students]
-    return res.sort((a, b) => a.age - b.age);
+    return [...this.students].sort((a, b) => a.age - b.age);
   }
 
   takeOnlyEngineers() {
     return this.students.filter(({ prof }) => prof === "инженер");
   }
 
-  averageAge() {
+  takeOnlyEngineers() {
     return (
       this.students.reduce((acc, { age }) => acc + age, 0) /
       this.students.length
