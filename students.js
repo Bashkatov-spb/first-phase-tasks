@@ -1,10 +1,31 @@
+/* eslint-disable max-classes-per-file */
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
 class Student {
+  constructor(name, age, prof) {
+    this.name = name;
+    this.age = age;
+    this.prof = prof;
+  }
   // твой код тут
 }
 
 class Institute {
+  constructor(students = []) {
+    this.students = [...students];
+  }
+
+  sortByAge() {
+    return this.students.sort((a, b) => a.age - b.age);
+  }
+
+  takeOnlyEngineers() {
+    return this.students.filter((student) => student.prof === 'инженер');
+  }
+
+  averageAge() {
+    return this.students.reduce((acc, student) => (acc += student.age), 0);
+  }
   // твой код тут
 }
 

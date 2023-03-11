@@ -1,0 +1,25 @@
+{
+  "name": "first-phase-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gardener.js",
+  "scripts": {
+    "start": "node gardener.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aleksandr2173/first-phase-tasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aleksandr2173/first-phase-tasks/issues"
+  },
+  "homepage": "https://github.com/Aleksandr2173/first-phase-tasks#readme",
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
