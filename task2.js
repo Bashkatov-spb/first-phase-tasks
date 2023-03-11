@@ -50,16 +50,16 @@ const data = [
 ];
 
 const getLanguagesStatistic = (arrOfObj) => {
-  return arrOfObj
-    .filter(
-      ({ year }) => year === Math.max(...arrOfObj.map(({ year }) => year))
-    )
-    .reduce(
-      (acc, el) => (
-        (acc[el["language"]] = ++acc[el["language"]] || 1), acc
-      ),
-      {}
-    );
+  const max = Math.max(...arrOfObj.map(({ year }) => year));
+
+  return arrOfObj.reduce((acc, el) => {
+    const { year } = el;
+    const key = el.language;
+    if (year === max) {
+      acc[key] = ++acc[key] || 1;
+    }
+    return acc;
+  }, {});
 };
 
 const result = getLanguagesStatistic(data);
@@ -69,3 +69,5 @@ console.log(result);
 //   C: 1,
 //   JavaScript: 2
 // }
+
+// ((acc[el["language"]] = ++acc[el["language"]] || 1), acc)
