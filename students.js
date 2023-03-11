@@ -18,9 +18,10 @@ class Institute {
   }
   averageAge() {
     let res = 0;
-    let count = this.students.length;
+    const count = this.students.length;
     res = this.students.reduce((acc, el) => acc + el.age, 0);
     return Math.floor(res / count);
+    //return Math.floor(this.students.reduce((acc, el) => acc + el.age, 0)/ this.students.length)
   }
 }
 
