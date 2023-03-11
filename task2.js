@@ -3,54 +3,63 @@
 
 const data = [
   {
-    firstName: 'Noah',
-    lastName: 'M.',
-    country: 'Switzerland',
-    continent: 'Europe',
+    firstName: "Noah",
+    lastName: "M.",
+    country: "Switzerland",
+    continent: "Europe",
     age: 19,
-    language: 'C',
+    language: "C",
     year: 2019,
   },
   {
-    firstName: 'Anna',
-    lastName: 'R.',
-    country: 'Liechtenstein',
-    continent: 'Europe',
+    firstName: "Anna",
+    lastName: "R.",
+    country: "Liechtenstein",
+    continent: "Europe",
     age: 52,
-    language: 'JavaScript',
+    language: "JavaScript",
     year: 2019,
   },
   {
-    firstName: 'Piter',
-    lastName: 'G.',
-    country: 'Sweden',
-    continent: 'Europe',
+    firstName: "Piter",
+    lastName: "G.",
+    country: "Sweden",
+    continent: "Europe",
     age: 30,
-    language: 'JavaScript',
+    language: "JavaScript",
     year: 2019,
   },
   {
-    firstName: 'Ramon',
-    lastName: 'R.',
-    country: 'Paraguay',
-    continent: 'Americas',
+    firstName: "Ramon",
+    lastName: "R.",
+    country: "Paraguay",
+    continent: "Americas",
     age: 29,
-    language: 'Ruby',
+    language: "Ruby",
     year: 2014,
   },
   {
-    firstName: 'George',
-    lastName: 'B.',
-    country: 'England',
-    continent: 'Europe',
+    firstName: "George",
+    lastName: "B.",
+    country: "England",
+    continent: "Europe",
     age: 81,
-    language: 'C',
+    language: "C",
     year: 2016,
   },
 ];
 
-const getLanguagesStatistic = () => {
-  // Твой код тут
+const getLanguagesStatistic = (arrOfObj) => {
+  return arrOfObj
+    .filter(
+      ({ year }) => year === Math.max(...arrOfObj.map(({ year }) => year))
+    )
+    .reduce(
+      (acc, el) => (
+        (acc[el["language"]] = ++acc[el["language"]] || 1), acc
+      ),
+      {}
+    );
 };
 
 const result = getLanguagesStatistic(data);
