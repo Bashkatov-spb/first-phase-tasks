@@ -1,11 +1,28 @@
 // Заполните классы так, чтобы при вызове методов в переменные попадал нужный результат
 
 class Student {
-  // твой код тут
+  constructor(name, age, profi){
+    this.name = name;
+    this.age = age;
+    this.profi = profi
+  }
 }
 
 class Institute {
-  // твой код тут
+  constructor(students = []){
+    this.students = students
+  }
+  sortByAge(){
+    let newArr = this.students.sort((a, b) => a.age-b.age)
+    return newArr
+  } 
+  takeOnlyEngineers(){
+    return this.students.filter((el) => el.profi === 'инженер')
+  }
+  averageAge(){
+   let count = this.students.reduce((acc, arr) => acc + arr.age, 0)
+   return count / this.students.length
+  }
 }
 
 // Код ниже менять нельзя
