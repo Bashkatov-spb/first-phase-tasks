@@ -24,7 +24,10 @@ class Institute {
   }
 
   averageAge() {
-    return this.students.reduce((acc, student) => (acc += student.age), 0);
+    return (
+      this.students.reduce((acc, student) => (acc += student.age), 0) /
+      this.students.length
+    );
   }
   // твой код тут
 }
