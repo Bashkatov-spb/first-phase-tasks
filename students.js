@@ -14,7 +14,8 @@ class Institute {
   }
 
   sortByAge() {
-    return this.students.sort((a, b) => a.age - b.age);
+    let res = [...this.students]
+    return res.sort((a, b) => a.age - b.age);
   }
 
   takeOnlyEngineers() {
