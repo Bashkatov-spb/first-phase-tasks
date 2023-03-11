@@ -54,13 +54,13 @@ class Worker {
       this.money -= meal * 3;
     }
 
-    for (let j = 0; j < shop.length; j += 1) {
-      if ((this.money = shop[j].price)) {
-        this.money -= shop[j].price;
+    shop.forEach((el) => {
+      if ((this.money = el.price)) {
+        this.money -= el.price;
 
-        this.items.push(shop.splice(shop[j], 1));
+        this.items.push(shop.splice(el, 1));
       }
-    }
+    });
 
     this.age += 1;
     this.stage += 1;
