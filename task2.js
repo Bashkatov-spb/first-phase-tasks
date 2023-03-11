@@ -62,8 +62,8 @@ const getLanguagesStatistic = () => {
   }
   return obj;
 };
+console.log(getLanguagesStatistic(data));
 
-console.log(result);
 // {
 //   C: 1,
 //   JavaScript: 2
