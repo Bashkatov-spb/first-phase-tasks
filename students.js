@@ -11,7 +11,7 @@ class Institute {
     this.students = students;
   }
   sortByAge() {
-    return this.students.sort((a, b) => a.age - b.age);
+    return [...this.students].sort((a, b) => a.age - b.age);
   }
   takeOnlyEngineers() {
     return this.students.filter((el) => el.stady === "инженер");
