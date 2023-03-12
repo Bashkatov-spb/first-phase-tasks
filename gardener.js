@@ -1,23 +1,34 @@
+// eslint-disable-next-line max-classes-per-file
 class Tree {
-  // Твой код ту
+  constructor(typeTree) {
+    this.typeTree = typeTree;
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(trees) {
+    this.trees = trees;
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(gennadiy) {
+    this.gennadiy = gennadiy;
+  }
+
+  gatherFruits(myLittleGarden) {
+    return myLittleGarden.trees.map((el) => `${this.gennadiy} собрал фрукты с дерева ${el.typeTree}`);
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.
 // Код ниже не менять :)
 const myLittleGarden = new Garden([
-  new Tree(`яблоня высокая`), // экземпляр класса
-  new Tree(`груша`),
-  new Tree(`персиковое дерево`),
+  new Tree('яблоня высокая'), // экземпляр класса
+  new Tree('груша'),
+  new Tree('персиковое дерево'),
 ]);
-const gennadiy = new Gardener(`Геннадий`);
+const gennadiy = new Gardener('Геннадий');
 const results = gennadiy.gatherFruits(myLittleGarden);
 console.log(results);
 

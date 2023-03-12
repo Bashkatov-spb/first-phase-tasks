@@ -1,0 +1,25 @@
+{
+  "name": "first-phase-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gardener.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TieR89/first-phase-tasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TieR89/first-phase-tasks/issues"
+  },
+  "homepage": "https://github.com/TieR89/first-phase-tasks#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
