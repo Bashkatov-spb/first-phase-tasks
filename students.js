@@ -18,7 +18,7 @@ class Institute {
   }
 
   takeOnlyEngineers() {
-    return this.students.filter(({ prof }) => prof === "инженер");
+    return this.students.filter(({ prof }) => prof === 'инженер');
   }
 
   averageAge() {
@@ -32,11 +32,11 @@ class Institute {
 // Код ниже менять нельзя
 
 const elbrus = new Institute([
-  new Student("Жмотяра", 43, "экономист"),
-  new Student("Петушара", 25, "инженер"),
-  new Student("Козлина", 31, "инженер"),
-  new Student("Сопляк", 11, "какулегенератор"),
-  new Student("Алкаш", 33, "инженер"),
+  new Student('Жмотяра', 43, 'экономист'),
+  new Student('Петушара', 25, 'инженер'),
+  new Student('Козлина', 31, 'инженер'),
+  new Student('Сопляк', 11, 'какулегенератор'),
+  new Student('Алкаш', 33, 'инженер'),
 ]);
 
 const sortedByAge = elbrus.sortByAge(); // Исходный массив менять нельзя

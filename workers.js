@@ -30,7 +30,7 @@ class Worker {
     return `Hi, my name is ${this.name}, I have ${this.stage} years of stage, ${
       this.money
     } money and ${[
-      this.items.reduce((acc, el) => `${acc + el[0].name} `, ""),
+      this.items.reduce((acc, el) => `${acc + el[0].name} `, ''),
     ]}`;
   }
 
@@ -71,20 +71,20 @@ class Worker {
   }
 }
 
-const kostantin = new Worker("Константин", 23, 5);
+const kostantin = new Worker('Константин', 23, 5);
 const rabota = new Work(kostantin, 30_000);
 const shop = [
-  { name: "NewСlothing", price: 30000 },
-  { name: "TV", price: 100_000 },
-  { name: "laptop", price: 110_000 },
-  { name: "Iphone", price: 150_000 },
-  { name: "NewIphone", price: 150_000 },
-  { name: "NewIphonePlus", price: 150_000 },
-  { name: "NewIphonePlusMinus", price: 150_000 },
-  { name: "NewIphonePlusMinusPinus", price: 150_000 },
-  { name: "Furniture", price: 300_000 },
-  { name: "NewCar", price: 10_000_000 },
-  { name: "NewHouse", price: 30_000_000 },
+  { name: 'NewСlothing', price: 30000 },
+  { name: 'TV', price: 100_000 },
+  { name: 'laptop', price: 110_000 },
+  { name: 'Iphone', price: 150_000 },
+  { name: 'NewIphone', price: 150_000 },
+  { name: 'NewIphonePlus', price: 150_000 },
+  { name: 'NewIphonePlusMinus', price: 150_000 },
+  { name: 'NewIphonePlusMinusPinus', price: 150_000 },
+  { name: 'Furniture', price: 300_000 },
+  { name: 'NewCar', price: 10_000_000 },
+  { name: 'NewHouse', price: 30_000_000 },
 ];
 
 kostantin.live(rabota, shop);
