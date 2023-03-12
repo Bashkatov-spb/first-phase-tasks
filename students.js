@@ -13,8 +13,8 @@ class Institute {
     this.students = students
   }
   sortByAge(){
-    let newArr = this.students.sort((a, b) => a.age-b.age)
-    return newArr
+   
+    return [...this.students].sort((a, b) => a.age-b.age)
   } 
   takeOnlyEngineers(){
     return this.students.filter((el) => el.profi === 'инженер')

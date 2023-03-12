@@ -50,8 +50,16 @@ const data = [
 ];
 
 const getLanguagesStatistic = () => {
-  // Твой код тут
-};
+  let obj = {};
+let arr = data.filter((el) => el.year === 2019).map((el) => el.language)
+console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    obj[arr[i]] = arr.filter((el) => el === arr[i]).length
+    
+  }
+  return obj
+}
+
 
 const result = getLanguagesStatistic(data);
 

@@ -43,8 +43,17 @@ const data = [
 
 // Необходимо вернуть массив, содержащий самого старшего человека в списке. Если несколько людей имеют одинаковый наибольший возраст, то нужно вернуть массив, содержащий их всех.
 
-const getMostSenior = () => {
-  // твой код тут
+const getMostSenior = (arr) => {
+  const newA = []
+ const newArr = [...arr].sort((a,b) => b.age - a.age)
+ for (let i = 1; i < newArr.length; i+=1) {
+  if(newArr[i].age === newArr[0].age){
+  newA.push(newArr[i])
+  }
+
+ }
+ newA.push(newArr[0])
+ return newA
 };
 
 const result = getMostSenior(data);
