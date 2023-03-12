@@ -2,10 +2,32 @@
 
 class Student {
   // твой код тут
+  constructor(name, age, profesion) {
+    this.name = name;
+    this.age = age;
+    this.profesion = profesion;
+  }
 }
 
 class Institute {
   // твой код тут
+  constructor(students = []) {
+    this.students = students;
+  }
+  sortByAge() {
+    const res = [...this.students];
+    return res.sort((a, b) => a.age - b.age)
+  }
+  takeOnlyEngineers() {
+    return this.students.filter(item => item.profesion === 'инженер');
+  }
+  averageAge() {
+    let res = 0;
+    this.students.forEach(el => {
+      res += el.age
+    })
+    return res / this.students.length;
+  }
 }
 
 // Код ниже менять нельзя

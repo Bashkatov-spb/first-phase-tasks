@@ -45,6 +45,9 @@ const data = [
 
 const getMostSenior = () => {
   // твой код тут
+  const sortByAge = data.sort((a, b) => a.age - b.age);
+  const old = sortByAge[sortByAge.length - 1].age;
+  return data.filter(item => item.age === old);
 };
 
 const result = getMostSenior(data);
