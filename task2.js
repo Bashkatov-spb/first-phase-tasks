@@ -49,8 +49,18 @@ const data = [
   },
 ];
 
-const getLanguagesStatistic = () => {
-  // Твой код тут
+const getLanguagesStatistic = (array) => {
+  const res = {};
+  array.forEach((elem) => {
+    if(elem.year === 2019) {
+      if(res[elem.language]) {
+        res[elem.language]++;
+      } else {
+        res[elem.language] = 1;
+      }
+    }
+  });
+  return res;
 };
 
 const result = getLanguagesStatistic(data);
