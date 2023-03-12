@@ -21,7 +21,7 @@ class Institute {
     return this.students.filter(({ prof }) => prof === "инженер");
   }
 
-  takeOnlyEngineers() {
+  averageAge() {
     return (
       this.students.reduce((acc, { age }) => acc + age, 0) /
       this.students.length
