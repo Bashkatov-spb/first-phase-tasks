@@ -1,13 +1,24 @@
 class Tree {
-  // Твой код ту
+  constructor(name) {
+    this.name = name;
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(tree = []) {
+    this.tree = tree;
+  }
 }
 
 class Gardener {
-  // Твой код тут
+  constructor(name) {
+    this.name = name;
+  }
+  gatherFruits(myLittleGarden) {
+    return myLittleGarden.tree.map(
+      (el) => `${this.name} собрал фрукты с дерева ${el.name}`
+    );
+  }
 }
 
 // Измени код выше, чтобы код ниже заработал.
