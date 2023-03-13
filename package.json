@@ -5,7 +5,7 @@
   "main": "gardener.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "Node task1.js"
+    "start": "Node task2.js"
   },
   "keywords": [],
   "author": "",

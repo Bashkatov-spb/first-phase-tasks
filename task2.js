@@ -49,13 +49,22 @@ const data = [
   },
 ];
 
+
 const getLanguagesStatistic = () => {
-  // Твой код тут
-};
+    let a = data.filter((g)=>g.year===2019)
+      return a.reduce(function(s, c) {
+        if(c.language in s)
+          s[c.language]++;
+        else
+          s[c.language] = 1;
+        return s;
+      }, {});
+    }
+
 
 const result = getLanguagesStatistic(data);
 
-console.log(result);
+ console.log(result);
 // {
 //   C: 1,
 //   JavaScript: 2
