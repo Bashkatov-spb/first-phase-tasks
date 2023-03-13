@@ -1,25 +1,37 @@
 class Tree {
-  // Твой код ту
+  constructor(name) {
+    this.name = name;
+  }
 }
 
 class Garden {
-  // Твой код тут
+  constructor(arrTree=[]) {
+    this.arrTree = arrTree;
+   }
 }
 
-class Gardener {
-  // Твой код тут
+class Gardener{
+  constructor(name) {
+    this.name = name;
+  }
+ 
+  gatherFruits(arr) {
+    return arr.arrTree.map((a)=> `${this.name} sобрал фрукты с дерева ${a.name}`)
+  }
 }
 
-// Измени код выше, чтобы код ниже заработал.
-// Код ниже не менять :)
 const myLittleGarden = new Garden([
   new Tree(`яблоня высокая`), // экземпляр класса
   new Tree(`груша`),
   new Tree(`персиковое дерево`),
 ]);
+
+console.log(myLittleGarden);
+
 const gennadiy = new Gardener(`Геннадий`);
 const results = gennadiy.gatherFruits(myLittleGarden);
 console.log(results);
+
 
 /*
   Ожидаемый результат в консоли:
