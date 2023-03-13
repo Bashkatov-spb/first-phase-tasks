@@ -40,11 +40,13 @@ const data = [
     language: 'Java',
   },
 ];
-
+console.log(data)
 // Необходимо вернуть массив, содержащий самого старшего человека в списке. Если несколько людей имеют одинаковый наибольший возраст, то нужно вернуть массив, содержащий их всех.
 
 const getMostSenior = () => {
-  // твой код тут
+  const mostSenior = Math.max(...data.map(item => item.age)) || null;
+  let res = data.filter(item => mostSenior && item.age == mostSenior);
+  return res
 };
 
 const result = getMostSenior(data);

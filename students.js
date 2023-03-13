@@ -12,7 +12,7 @@ class Student {
 class Institute {
   constructor(arr=[]){
     this.arr = [...arr]
-  }
+  }/
   sortByAge(){
     return this.arr.sort((a, b)=>{
       if (a.age > b.age) {
