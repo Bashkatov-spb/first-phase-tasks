@@ -50,8 +50,17 @@ const data = [
 ];
 
 const getLanguagesStatistic = () => {
-  // Твой код тут
+  const statistic = {};
+  for (const review of data) {
+    if (review.year === 2019) {
+      const language = review.language;
+      statistic[language] = statistic[language] ? statistic[language] + 1 : 1;
+    }
+  }
+
+  return statistic;
 };
+
 
 const result = getLanguagesStatistic(data);
 

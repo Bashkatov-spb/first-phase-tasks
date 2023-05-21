@@ -1,0 +1,23 @@
+{
+  "name": "first-phase-tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gardener.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Birdbass/first-phase-tasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Birdbass/first-phase-tasks/issues"
+  },
+  "homepage": "https://github.com/Birdbass/first-phase-tasks#readme",
+  "devDependencies": {
+    "eslint": "^8.41.0"
+  }
+}

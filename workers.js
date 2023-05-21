@@ -26,5 +26,5 @@ class Worker {
   }
 }
 
-const kostantin = new Worker('Константин', 23, 5);
+const kostantin = new Worker("Константин", 23, 5);
 const rabota = new Work(kostantin, 30_000);
