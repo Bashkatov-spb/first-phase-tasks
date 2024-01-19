@@ -11,11 +11,11 @@ class Institute {
 // Код ниже менять нельзя
 
 const elbrus = new Institute([
-  new Student('Жмотяра', 43, 'экономист'),
-  new Student('Петушара', 25, 'инженер'),
-  new Student('Козлина', 31, 'инженер'),
-  new Student('Сопляк', 11, 'какулегенератор'),
-  new Student('Алкаш', 33, 'инженер'),
+  new Student('Фёдор', 43, 'экономист'),
+  new Student('Игнат', 25, 'инженер'),
+  new Student('Ибрагим', 31, 'инженер'),
+  new Student('Марфа', 18, 'врач'),
+  new Student('Евдокия', 33, 'инженер'),
 ]);
 
 const sortedByAge = elbrus.sortByAge(); // Исходный массив менять нельзя
